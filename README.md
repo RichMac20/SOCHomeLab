@@ -1,4 +1,4 @@
-# SOCHomeLab
+# SOC Analyst Homelab
 Creating a SOC Analyst Homelab via Virtualbox
 
 Download the "SOC Analyst Homelab.docx"
@@ -11,8 +11,8 @@ Download the "SOC Analyst Homelab.docx"
   - Wazuh Setup
   - Email Servers Setup + GoPhish Setup
 
-***  NOTE ***
-This is a work in progress 
+# Note
+Documentation will be reworked
 *************
 
 Things to be added in the future:
