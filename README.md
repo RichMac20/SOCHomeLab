@@ -1,7 +1,7 @@
 # SOC Analyst Homelab
-## Creating a SOC Analyst Homelab via Virtualbox
-
-Download the "SOC Analyst Homelab.docx"
+Creating a SOC Analyst Homelab via Virtualbox
+---
+# Download the "SOC Analyst Homelab.docx"
 - File Contains the following:
   - Virtualbox Setup for 6 VMs
   - Networking/PfSense Configuration
@@ -13,7 +13,7 @@ Download the "SOC Analyst Homelab.docx"
 
 # Note
 Documentation will be reworked
-*************
+---
 
 Things to be added in the future:
 - Major rework of Documentation
