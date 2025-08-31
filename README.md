@@ -1,5 +1,5 @@
 # SOC Analyst Homelab
-Creating a SOC Analyst Homelab via Virtualbox
+## Creating a SOC Analyst Homelab via Virtualbox
 
 Download the "SOC Analyst Homelab.docx"
 - File Contains the following:
@@ -20,3 +20,4 @@ Things to be added in the future:
 - Splunk Alerts/Automation
 - Log Optimization when pulled from SecOnion
 - Video Tutorial/Walkthrough of Setup, Siumulated Attack, SOC Analyst POV of Simulated Attack
+- Addition of Resources
