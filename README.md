@@ -1,5 +1,7 @@
 # SOC Analyst Homelab
+
 Creating a SOC Analyst Homelab via Virtualbox
+
 ---
 # Download the "SOC Analyst Homelab.docx"
 - File Contains the following:
