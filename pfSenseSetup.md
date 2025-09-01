@@ -1,0 +1,59 @@
+# pfSense Setup <img width="100" height="100" alt="download" src="https://github.com/user-attachments/assets/9d495425-6756-4d5b-89c0-eff7074dda82" />
+
+### In Virtualbox Manager
+- Set Network Adapters:
+  - Adapter 1: NAT for WAN
+  - Adapter 2: Internal Network for Windows Gateway/LAN 
+  - Adapter 3: ‘External’ Attacker Network for Kali Linux Gateway/LAN 
+  - Adapter 4: Network for Management of SecurityOnion/Splunk 
+  - Adapter 5: Network for SPAN Port (Virtualbox GUI doesn’t support for NIC 5-8 configuration, must be through command line)
+    - Enter the following as commands in CMD:
+      - cd "C:\Program Files\Oracle\VirtualBox"
+      - VBoxManage list vms
+        - Select name for pfSense, mine is “PfSense”
+      - VBoxManage modifyvm "PfSense" --nic5 intnet
+        - Adds internal network type for nic5
+      - VBoxManage modifyvm "PfSense" --intnet 5 “Span-Network”
+        - Sets Internal Network name
+      - VBoxManage modifyvm "PfSense" --nicpromisc5 allow-all
+        - Allows for Promiscuous mode 
+          - Allows all traffic on segment not just traffic directed to pfSense
+- Boot pfSense
+- Following Install Procedure:
+  - Install pfSense
+  - Keep Default Keymapping
+  - Partition Disk via ‘Auto UEFI’
+    - Faster boot than ‘Auto BIOS’ 
+- Setup em1 IPV4 Gateway Address and DHCP Pool for Windows/Victim Network:
+  - Set Interface(s) IP Address
+  - Select LAN Interface
+    - Gateway Address/Netmask: 192.168.50.1/24
+  - Decline WAN IPV4 upstream gateway address 
+    - Already using Virtualbox’s NAT as WAN IPV4 upstream gateway address 
+  - Decline IPV6 setup (Not needed, 4 hosts total)
+  - Setup DHCP Server Pool Range
+    - 192.168.50.10 - 192.168.50.100
+  - Allow HTTP as webConfigurator Protocol 
+    - Allows for HTTP web Configuration of pfSense for various Services
+- Setup em2 IPV4 Gateway Address and DHCP Pool for Kali Linux/Attacker Network:
+  - Set Interface(s) IP Address
+  - Select LAN Interface
+    - Gateway Address/Netmask: 192.168.100.1/24
+  - Decline WAN IPV4 upstream gateway address 
+    - Already using Virtualbox’s NAT as WAN IPV4 upstream gateway address 
+  - Decline IPV6 setup (Not needed, 4 hosts total)
+  - Setup DHCP Server Pool Range
+    - 192.168.100.10 - 192.168.100.100
+- Change LAN1 (Victim) DHCP Settings:
+  - The following will allow additional PCs to join the domain seamlessly
+    - Have DC1 (192.168.50.101) as Primary DNS Server 
+    - Change Domain Name to homelab.local
+- Setup em3 IPV4 Gateway Address and DHCP Pool for Management Network: 
+  - Set Interface(s) IP Address
+  - Select LAN Interface
+    - Gateway Address/Netmask: 192.168.150.1/24
+  - Decline DHCP Setup
+    - Will utilize static mapping 
+- Setup em3 IPV4 Gateway Address and DHCP Pool for SpanPort (Mirror LAN1):
+  - Don’t enter an IP address
+  - Will bridge the network to LAN1 later during Web Configuration 
