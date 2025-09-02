@@ -1,0 +1,45 @@
+# Setup Windows Server 2022:<img width="600" height="66" alt="download" src="https://github.com/user-attachments/assets/fd3cce52-54fd-4a41-b0b6-c740da4614a8" />
+- In Virtualbox Manager
+  - Change Network Adapter 2 to Internal Network for LAN1
+- Boot/Setup Windows Server 2022
+  - Select Standard Desktop Experience 
+  - Allow Default Storage Allocation 
+  - Setup Administrator Account
+- Rename PC via About Your PC to DC1 
+- Reboot
+- Install Virtualbox Guest Additions 
+  - Enhances performance/usability 
+- Change IPV4 Ethernet Adapter to use loopback (127.0.0.1) as primary DNS server
+  - Will still use pfSense as a backup if it can’t resolve locally
+# Setup Active Directory on Windows Server 2022:
+- Install Active Directory Domain Services via Server Manager on Windows Server 2022
+  - Promote Windows Server 2022 as Domain Controller 
+    - Create new forest 
+      - Domain Name: (homelab.local) 
+    - Forest Functional Level: 2016
+    - Install DNS on Windows Server 2022
+    - Set as Global Catalog (CC) Server 
+    - Leave ‘Additional Options’ and ‘Paths’ as Default 
+  - Complete Domain Controller Installation
+- Turn off Windows Firewall/Defender (Optional) 
+  - Allows for an environment full of vulnerabilities to exploit 
+# Setup Certificate Services on Windows Server 2022: <br /> (Optional, not currently utilized) 
+- Install Active Directory Certificate Services on Windows Server 2022
+  - Add only Certification Authority as a Role Service 
+    - Other Roles over not needed for the purpose of this lab
+- Active Directory Certificate Services Configuration:
+  - Select Enterprise CA 
+    - Simplifies management of Certificates
+  - Select Root CA
+    - Since DC will be atop the PKI hierarchy 
+  - Create new private key
+    - One doesn’t already exist
+  - Select SHA256
+    - Secure and compatible with most system
+  - Keep default Common/Distinguished Name:
+    - Common: homelab-DC1-CA
+    - Distinguished: CN=homelab-DC1-CA, DC=homelab, DC=local 
+  - Change validity to 99 years
+    - Prevents issue if the lab is still in use years down the line
+  - Keep default Certificate database/log location:
+    - C:\Windows\system32\CertLog
