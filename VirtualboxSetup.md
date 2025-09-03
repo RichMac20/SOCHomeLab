@@ -1,4 +1,4 @@
-# Virtualbox Setup <img width="100" height="100" alt="download" src="https://github.com/user-attachments/assets/10b1befd-9424-46ff-b10b-00524ad4780d" />
+# Virtualbox Setup <img width="50" height="100" alt="download" src="https://github.com/user-attachments/assets/10b1befd-9424-46ff-b10b-00524ad4780d" />
 
 
 
