@@ -1,0 +1,38 @@
+# pfSense Web Configuration (Windows Server 2022): <img width="100" height="100" alt="download" src="https://github.com/user-attachments/assets/d72b2fa5-ea1d-46fc-b672-68d26c096375" />
+
+
+- Launch Edge
+- Access Gateways (192.168.50.1) pfSense Configuration Portal
+- Login via default pfSense credentials
+- Complete pfSense Setup
+  - Keep default hostname: pfSense
+  - Domain: lab.local
+  - Primary DNS Server: 1.1.1.1 (Cloudflare DNS)
+  - Secondary DNS Server: 8.8.8.8 (Google's DNS)\
+  - Uncheck DNS Override
+      - Prevents WAN DHCP from overriding configuration 
+  - Keep default Time Server configuration 
+  - Keep default WAN configuration (Already using VirtualBox NAT as WAN)
+  - Uncheck ‘Block RFC1918 Private Networks’ and ‘Block bogon networks’
+      - Since all interfaces within the lab use private addresses these will need to be unchecked for upstream communication and to allow VMs to test the firewall
+  - Keep existing LAN IP Address configuration 192.168.50.1/24
+  - Change admin password 
+- Default Allow Any Protocol from LAN to Any Destination rule for IPV4/6 and Anti-Lockout Rule for LAN is established 
+- Copy ALLOW rules for OPT1(Attacker)/OPT2(Management) in the Web Config Portal 
+- Change Names for various interfaces:
+  - em1= VICTIM
+  - Em2 = KALIATTACKER
+  - Em3 = MANAGEMENTSECONIONSPLUNK
+  - Em4 = SPANPORT
+- Bridge SPANPORT to VICTIM:
+  - Interfaces > Assignments > Bridges:
+  - Add 
+      - Select VICTIM 
+        - Advanced > Scroll to SPANPORT > Select SPANPORT > Save
+# Add Static DHCP Mapping for DC1 (Windows Server 2022): 
+- Access Gateways (192.168.50.1) pfSense Configuration Portal
+- Access DHCP Server via Services Dropdown Menu
+- Add Static DHCP Mapping 
+  - IP Address: 192.168.50.101
+  - Hostname: DC1
+- Keep other configurations default 
