@@ -29,7 +29,7 @@
   - Add 
       - Select VICTIM 
         - Advanced > Scroll to SPANPORT > Select SPANPORT > Save
-# Add Static DHCP Mapping for DC1 (Windows Server 2022): 
+# Add Static DHCP Mapping for DC1 (Windows Server 2022): 🗺️
 - Access Gateways (192.168.50.1) pfSense Configuration Portal
 - Access DHCP Server via Services Dropdown Menu
 - Add Static DHCP Mapping 
