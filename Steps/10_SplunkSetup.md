@@ -20,7 +20,7 @@
     - Allows splunk to run on boot to prevent having to manually start splunk
 # Add Splunk to so-allow list on SecOnion 
 - Enter:
-  - Sudo so-allow
+  - 'Sudo so-allow' 
   - Select ‘A’
   - Enter 192.168.150.20
 - NOTE: Allows Ubuntu (Splunk Server) to access SecOnion to collect logs
