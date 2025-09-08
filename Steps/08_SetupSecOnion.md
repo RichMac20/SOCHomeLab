@@ -1,0 +1,48 @@
+# Setting up SecurityOnion
+- In Virtualbox Manager
+  - Change Network Adapter 2 to Internal Network for LAN3
+    -Management Interface for Web Interface 
+  - Change Network Adapter 3 to Internal Network for SPAN-Network (Promiscuous Mode)
+    - This NIC is going to be the Monitor Interface for all of LAN1
+- Boot/Setup Security Onion
+  - Setup Administrative Account
+    - User/Password
+  - Allow Setup script to run 
+  - Reboot
+  - Login 
+  - Continue with SecurityOnion setup 
+  - Standard Installation
+  - Evaluation Installation Mode (Quick, all-in-one testing) 
+  - Set Hostname (seconion)
+  - Select emp0s8 as the Management Interface
+  - Select Static IP 
+    - IP Address: 192.168.150.10/24
+  - Enter Gateway
+    - Gateway: 192.168.150.1
+  - DNS Server Config:
+    - Add DC1 (192.168.50.101) as Primary (Internal Inquires)
+    - pfSense Management Interface (192.168.150.1) as Secondary DNS Server for non-domain inquires 
+  - DNS Search Domain
+    - Same as AD Domain: homelab.local 
+      - Allows seconion to resolve hosts with typing full FQDN
+        - Ex. dc1 to dc1.homelab.local
+  - Select Standard Setup
+    - Allows for internet access
+  - Direct Internet Access
+  - Pre-Install Checkups for Packages 
+  - Select emp0s9 as the Monitor Interface 
+    - Will utilize the Span-Network NIC setup earlier
+  - Automatic Patch Schedule
+  - Change Home Network to 192.168.50.0/24 
+    - Allows Security Onion to know which is the internal (trusted) network and external (untrusted) network
+  - Keep all optional services 
+    - Especially Wazuh (Will use for HIDS on DC1/PC1) 
+  - Keep default Docker IP range
+    - Default is 172.16.0.0/16 (No LANs conflict) 
+  - Setup email (Doesn’t have to be a real Email) and Password to access the Web Interface
+  - Select IP for web interface access
+  - Select ‘No’ for NTP Servers
+    - pfSense will be sync’d to which is already running ntp.
+  - Select ‘Yes’ for so-allow (Allows other devices to access Services on SecurityOnion)
+    - Enter DC1 address
+- Reboot
