@@ -36,3 +36,10 @@
   - IP Address: 192.168.50.101
   - Hostname: DC1
 - Keep other configurations default 
+# Set Static IP Mapping for Security Onion via Edge on DC1: 
+- Access pfSense Portal 
+- Status 
+- DHCP Lease 
+- Select Add Static Mapping Option 
+  - Security Onion IPV4 Static Address: 192.168.50.102
+    - NOTE: If you use the DHCP pool and then try to change to a static address later in either pfSense or Security Onion Server the Docker running Security Onion SOC won’t change the IP Address since its locked in after the initial setup
