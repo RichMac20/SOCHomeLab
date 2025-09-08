@@ -1,4 +1,5 @@
-# Setting up SecurityOnion
+# Setting up SecurityOnion <img width="100" height="100" alt="download" src="https://github.com/user-attachments/assets/0bad4ac8-cc1f-46d8-afa0-217321faea5e" /> 
+
 - In Virtualbox Manager
   - Change Network Adapter 2 to Internal Network for LAN3
     -Management Interface for Web Interface 
