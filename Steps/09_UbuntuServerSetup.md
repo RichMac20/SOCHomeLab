@@ -1,0 +1,41 @@
+# Setting up Ubuntu Server (for Splunk)  <img width="100" height="100" alt="download" src="https://github.com/user-attachments/assets/138e98bb-a7e2-4dcc-a011-2198513a725f" />
+- In Virtualbox Manager
+  - Change Network Adapter 1 to Internal Network for LAN3
+- Boot/Setup Ubuntu Server (Recommended by Splunk):
+  - Select Language (English)
+  - Accept default layout/variant options for Keyboard (English US)
+  - Select default Ubuntu Server 
+  - Select enpos3 (NIC for LAN3)
+    - Select IPV4 Manual
+      - Subnet: 192.168.150.0/24
+      - Address: 192.168.150.20
+      - Gateway: 192.168.150.1
+      - Name Servers: 192.168.50.101, 192.168.150.1
+        - DC1 as primary, pfSense LAN3 interface as secondary
+      - Search Domains: homelab.local (AD Domain) 
+  - Skip Proxy Address configuration
+    - Using pfSense to access the internet
+  - Keep default archive mirror configuration address 
+    - Address used for packages/updates. 
+  - Keep default storage configuration (Setup earlier: 50GB)
+  - Profile Configuration:
+    - Select Name
+    - Server Name: ‘splunk’
+    - Username
+    - Password
+    - Skip Ubuntu Pro
+      - Can be enabled later
+    - Install OpenSSH Server
+    - Skip Featured Server Snaps
+      - None are needed for this lab
+- Reboot
+- Install GUI
+  - First install tasksel (Task Selector)
+    - Allows simple installs of predefined packages (i.e., Ubuntu Desktop)
+      - ‘Sudo apt install tasksel’ 
+  - Install Ubuntu Desktop
+    - Sudo apt install ubuntu-desktop 
+- Reboot server
+  - Sudo reboot
+- Login 
+  - Should now see GUI Desktop 
