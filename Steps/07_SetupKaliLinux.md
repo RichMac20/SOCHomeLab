@@ -1,0 +1,17 @@
+# Setup Kali Linux <img width="100" height="100" alt="download" src="https://github.com/user-attachments/assets/affed0d2-2659-4359-9888-048eeefcf600" />
+- In Virtualbox Manager
+  - Change Network Adapter 2 to Internal Network for LAN2
+- Boot/Setup Kali Linux
+  - Select Graphical Install 
+  - Select Default Language/Location 
+  - Use eth0 (NAT/WAN) interface for installation
+  - Enter domain (homelab.local) (Doesn’t actually add to AD Domain)
+  - Setup Non-Admin Account:
+    - Full Name: John
+    - Username: john (Must be lowercase) 
+  - Select TimeZone
+  - Select Virtual Disk and default Partition Options
+  - Keep default Desktop Environment Install and Tools
+  - Install GRUB boot loader
+- Update/Upgrade Packages 
+- Reboot
