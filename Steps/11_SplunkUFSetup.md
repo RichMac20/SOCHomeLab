@@ -1,0 +1,54 @@
+# Adding Splunk Universal Forwarders to Endpoints (DC1, PC1):  <img width="299" height="168" align="right" alt="download" src="https://github.com/user-attachments/assets/6bc9cb15-dc12-41b3-8c61-508237e5e172" />
+
+Universal Forwarders are lightweight Splunk agents that collect/forward logs to a Splunk indexer
+- In Splunk Enterprise:
+  - Settings > Forwarding and receiving
+  - Configure receiving 
+  - New Receiving Port
+  - Add the default listening port (9997)
+- Setup Splunk Index (in Splunk Enterprise):
+  - Settings > Indexes
+  - New Index
+    - Name: winevent_log
+    - Leave other settings default besides:
+      - Tsidx Retention Policy: Enable
+      - 2 Day
+        - Prevents large storage usage 
+- On DC1
+  - Access Splunk.com > Navigate to Splunk Universal Forwarder download:
+    - Install for Windows Server 2022
+  - Run the .msi
+  - Setup Admin account
+  - Enter Deployment Server info:
+    - Used to config Universal Forwarder 
+      - Host/IP: 192.168.150.20
+      - Port: 8089 (Default Port)
+  - Enter Receiving Port info:
+    - Host/IP: 192.168.150.20
+    - Port: 9997(Default Port, same port previously configured in Splunk Enterprise) 
+- On PC1:
+  - Access Splunk.com > Navigate to Splunk Universal Forwarder download:
+    - Install for Windows Server 2022
+  - Run the .msi
+  - Setup Admin account
+  - Enter Deployment Server info:
+    - Used to config Universal Forwarder 
+      - Host/IP: 192.168.150.20
+      - Port: 8089 (Default Port)
+  - Enter Receiving Port info:
+    - Host/IP: 192.168.150.20
+    - Port: 9997(Default Port, same port previously configured in Splunk Enterprise)
+# Creating Forwarder Server and adding Endpoint Agents (Universal Forwarders)
+- Add Splunk Forwarder Server (In Splunk Enterprise): 
+  - Settings > Add Data 
+  - Select Windows DC1 and PC1
+  - Name Windows Forwarder
+  - Select Source:
+    - Local Event Logs
+      - If this doesn’t show up:
+        - Settings > Add Data > Forwarder > Existing > Select Server Class.
+    - Select Application, Security, and System
+      - ForwardedEvents - Events forwarded from another Win Machine 
+        - Setup - OS Setup/Installation Logs
+        - Both above Logs aren’t security critical/setup 
+  - Select Index: winevent_log
