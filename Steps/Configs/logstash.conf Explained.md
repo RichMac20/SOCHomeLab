@@ -1,1 +1,28 @@
-
+# Note: Whitespace isn't Important When Using JSON
+- Explanation:
+  - Input { beats { port => 5044}} 
+    - Sets logstash to listen on port 5044 for data from Filebeat
+  - Filter:
+    - Json { source/target}:
+      - Filters the input from Filebeat into json format and changes the name of the message
+    - Mutate { rename}:
+      - Renames parsed_json to message again
+  - Output:
+    - Stdout { codec => rubydebug }
+      - Used to debug issues with Logstash
+        - Logstash uses JRuby 
+          - JRuby has compatibility issues with the Security Onion iso / Linux library version I have, thus the need to use a docker instance to isolate the library. 
+    - Splunk_hec:
+      - Sends processed data to Splunk HEC
+    - Hec_host:
+      - Specifies host
+    - Port:
+      - Default port for HEC is 8088
+    - Hec_token:
+      - Token for the HEC configured
+        - Note: Will be a different HEC Token generated when creating a HEC instance, use the one that you created
+          - Found in Settings > Data Inputs > HEC > Show Token
+    - Index:
+      - Sending to configured index 
+    - Sourcetype => “_json”
+      - Specifies to send in json (Which is default behavior for HEC anyway)
