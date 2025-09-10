@@ -1,0 +1,41 @@
+# Wazuh Setup (Security Onion): <img width="200" height="200" align="right" alt="download" src="https://github.com/user-attachments/assets/5c8aee06-09a1-4cbc-838e-98cd4d0451d4" />
+- Enter ‘sudo so-allow’ 
+- Select ‘w’ for Wazuh Agent 
+  - Opens TCP port 1514 for Agents to forward to
+- Enter ‘so-allow’ 
+- Select ‘r’ for Wazuh registration service 
+  - Opens TCP port 1515 to allow Wazuh agent registration
+- Add Endpoints as Agents:
+  - Enter ‘sudo so-wazuh-agent-manage’
+    - Allows management of Wazuh Agents
+- Add DC1 as an Agent:
+  - Enter ‘a’ to Add Agent:
+    - Provide Name: DC1
+    - Enter IP: 192.168.50.101
+- Add PC1 as an Agent:
+  - Enter ‘a’ to Add Agent:
+    - Provide Name: PC1
+    - Enter IP: 192.168.50.11
+- Pull Authentication Key for Endpoints:
+  - Enter ‘e’
+    - Select Host via ID (i.e., ‘002’ for DC1) 
+      - Do the same for PC1
+        - Note: Copy/paste the corresponding key into the notepad of the endpoint. They will be used for Agent registration/authentication.
+# Register/Authenticate Wazuh Agents (On Endpoints):
+- Access Wazuh.com 
+  - Locate the correct version supported by the security onion version
+    - Note: Older versions of Security Onion don’t support Wazuh 4.x, confirm with Security Onion version documentation
+  - Install for Windows 
+    - Follow the prompts, before finishing check the box for running the configuration
+- Register/Authenticate DC1:
+  - Enter the IP Address of the Manager (Security Onion’s IP): 192.168.150.10
+  - Enter Authentication key for the endpoint 
+- Repeat the above for PC1
+- Note: If the status shows stopped perform the following:
+  - Run Command Prompt as Admin:
+    - Enter ‘net start wazuh’
+    - Select Refresh on Wazuh Agent Manager Application 
+      - It should show running now
+  - Alternatively, open Task Manager > Services:
+    - Locate ‘OssecSvc’ 
+    - Right-Click > Start 
