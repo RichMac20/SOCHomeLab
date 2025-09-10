@@ -1,0 +1,31 @@
+filebeat.inputs:
+        - type: log
+          enabled: true
+          paths:
+                - /nsm/zeek/logs/current/*.log
+          fileds:
+                log_type: zeek
+          fields_under_root: true
+          
+        - type: log
+          enabled: true
+          paths:
+                - /nsm/suricata/eve.json
+          json.keys_under_root: true
+          json.add_error_key: true
+          fileds:
+                log_type: suricata
+          fields_under_root: true 
+          
+        - type: log
+          enabled: true
+          paths:
+                - /nsm/wazuh/logs/alerts/alters.json
+          json.keys_under_root: true
+          json.add_error_key: true
+          fileds:
+                log_type: wazuh
+          fields_under_root: true
+
+output.logstash:
+        hosts: ["192.168.150.10:5044]
