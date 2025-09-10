@@ -8,6 +8,8 @@
     - Review and finish 
 - Make sure SSL is on for HEC
   - Settings > Data Inputs > HEC > Global Settings > Check SSL box
+  ---
+  <img width="561" height="293"  alt="download" src="https://github.com/user-attachments/assets/18c1f6a6-ac36-4fb5-878e-aba91756b2e1" />
 # Setup Filebeat on Security Onion:
 - Configure Filebeat to Forward logs via Syslog to Splunk:
   - Filebeat: Tool used to forward specific logs to a destination, like splunk. (Not typically installed)
@@ -32,7 +34,7 @@
     - Suricata: Network intrusion detection and prevention system that inspects network packets for signatures and anomalies
       - Collects: Alerts triggered by known signatures
       - Network flow data/metadata
-      - Protocol anomalies, suspicious packet payloads
+      - Protocol anomalies, suspicious packet payloads 
     - Wazuh: Host based intrusion detection system that monitors endpoints for security events
       - Collects: Host logs
       - Security alerts
@@ -78,8 +80,7 @@
   - “Xpack.monitoring.enabled: false”
   - Disabled Licensereader/checker
     - If not disabled it will try and check the license in elasticsearch which hasn’t been setup. 
-- Create a ‘logstash.conf’ file in /root/logstash-docker/pipeline/
-  - See image below for script
+- Create a [logstash.conf](https://github.com/RichMac20/SOCHomeLab/blob/main/Steps/Configs/logstash.conf) file in /root/logstash-docker/pipeline/
 - Run the following command as one: (Only run after logstash.conf is created)
   - “docker run -d --name logstash --restart unless-stopped -v /root/logstash-docker/pipeline:/usr/share/logstash/pipeline -v /root/logstash-docker/config/logstash.yml:/usr/share/logstash/config/logstash.yml -p 5044:5044 custom-logstash:latest logstash -f /usr/share/logstash/pipeline/logstash.conf
   - Command creates a docker container titled ‘logstash’ and boots on start unless stopped. Creates a logstash.conf file in /usr/share/logstash/pipeline within the container to use the conf and uses the logstash.yml file to disable lisensereader/checker (only works in .yml). Uses port 5044 and the custom-logstash image we created earlier. Final command just forces the use of the logstash.conf file.  
