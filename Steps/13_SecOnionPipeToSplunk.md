@@ -42,3 +42,46 @@
   - Copy the [filebeat.yml](https://github.com/RichMac20/SOCHomeLab/blob/main/Steps/Configs/filebeat.yml) file into //etc/filebeat/filebeat.yml and //etc/logstash/conf.d/(filename)** respectively 
 - Restart filebeat:
   - Enter ‘sudo systemctl restart filebeat’ 
+# Setup Logstash for Security Onion:
+- Add Elastic repo (Holds Logstash and other tools) 
+  - Add the following into a shell script
+    - #!/bin/bash
+    - sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    - cat <<EOF | sudo tee /etc/yum.repos.d/elastic.repo
+    - [elastic-8.x]
+    - name=Elastic repository for 8.x packages
+    - baseurl=https://artifacts.elastic.co/packages/8.x/yum
+    - gpgcheck=1
+    - gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    - enabled=1
+    - autorefresh=1
+    - type=rpm-md
+    - EOF
+    - sudo yum clean all
+    - Run the script
+- Install Logstash 
+  - “sudo yum install logstash”
+- Start and enable Logstash on boot:
+  - “sudo systemctl start logstash”
+  - “sudo systemctl enable logstash”
+- Next create a docker container with a custom docker image of Logstash with the splunk_hec plugin added
+  - “docker pull docker.elastic.co/logstash/logstash:8.18.2”
+    - Pulls the official image
+- Create a Dockerfile in /root/logstash-docker/ named Dockerfile 
+  - Will be used to build customer docker image with splunk_hec
+    - “FROM docker.elastic.co/logstash/logstash:8.18.2”
+    - “RUN logstash-plugin install logstash-output-splunk_hec”
+- Build custom Logstash container image
+  - “Docker build -t custom-logstash:latest .”
+- Create a ‘Config’ Folder in /root/logstash-docker/ 
+- Create a file in the Config folder titled logstash.yml
+  - “Xpack.monitoring.enabled: false”
+  - Disabled Licensereader/checker
+    - If not disabled it will try and check the license in elasticsearch which hasn’t been setup. 
+- Create a ‘logstash.conf’ file in /root/logstash-docker/pipeline/
+  - See image below for script
+- Run the following command as one: (Only run after logstash.conf is created)
+  - “docker run -d --name logstash --restart unless-stopped -v /root/logstash-docker/pipeline:/usr/share/logstash/pipeline -v /root/logstash-docker/config/logstash.yml:/usr/share/logstash/config/logstash.yml -p 5044:5044 custom-logstash:latest logstash -f /usr/share/logstash/pipeline/logstash.conf
+  - Command creates a docker container titled ‘logstash’ and boots on start unless stopped. Creates a logstash.conf file in /usr/share/logstash/pipeline within the container to use the conf and uses the logstash.yml file to disable lisensereader/checker (only works in .yml). Uses port 5044 and the custom-logstash image we created earlier. Final command just forces the use of the logstash.conf file.  
+- Check Splunk HEC (seconion_hec)
+  - Should be receiving logs now. 
