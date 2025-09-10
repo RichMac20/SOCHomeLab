@@ -1,0 +1,28 @@
+# Note: Whitespace is Important in YAML, Recreate as Seen.
+- Explanation:
+  - Type: Log
+    - Tells filebeat the type is a Log (Any file that contains logs, including JSON)
+  - Enabled: True
+    - Actives input and collection
+  - Paths:
+    - Specifies the path 
+  - Fields: 
+    - Log_type: (Example)
+      - Creates a field titled log_type, allows Splunk to parse for that field type and find data collected from that specific tool
+  - fields _under_root: true 
+    - Puts custom field (Log_type) to top level instead of being nested under fields:
+      - Example:	
+        - Instead of field: { "fields": { "log_type": "wazuh" } }
+        - It looks like: { "log_type": "wazuh" }
+  - Json.keys_under_root: true:
+    - Does the same as fields _under_root: true, just with json instead of fields
+  - Json.add_error_key: true:
+    - Adds key if there is an issue with the logs, can help with log error troubleshooting
+  - Codec: json_lines:
+    - Sends each log event as a properly delimited JSON line
+      - Makes the logs human readable and easily parsable
+  - Output.logstash
+    - Used logstash (Data processing pipeline tool used to collect, process, and forward logs/events from sources to a destination) 
+      - Host: [“192.168.150.10:5044”] 
+        - Sending to Security Onion port 5044 (Port Logstash listens on)
+          - Note: Using logstash because it supports a splunk_hec plugin 
