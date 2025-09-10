@@ -1,0 +1,44 @@
+# Setup Splunk HEC (Splunk): 
+- Create new Ingestion:
+  - In Splunk Enterprise:
+    - Settings > New Data > Monitor > HTTP Event Collector:
+    - Name the Collector
+    - Next
+    - Select Create a new Index (seconion_hec)
+    - Review and finish 
+- Make sure SSL is on for HEC
+  - Settings > Data Inputs > HEC > Global Settings > Check SSL box
+# Setup Filebeat on Security Onion:
+- Configure Filebeat to Forward logs via Syslog to Splunk:
+  - Filebeat: Tool used to forward specific logs to a destination, like splunk. (Not typically installed)
+- In Security Onion:
+  - Install Filebeat:
+    - Enter ‘curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-9.0.0-x86_64.rpm’
+      - Downloads official filebeat package
+  - Enter ‘sudo rpm -i filebeat-9.0.0-x86_64.rpm’
+    - Installs Filebeat via rpm package
+  - Enter ‘sudo systemctl start filebeat’
+    - Starts filebeat
+  - Enter ‘sudo systemctl enable filebeat’ 
+    - Enables Filebeat to start on boot
+  - Enter ‘sudo systemctl status filebeat’ 
+    - Look for ‘Running’ to confirm its on
+  - Next, change the //etc/filebeat/filebeat.yml (Config File) to forward Zeek, Suricata and Wazuh logs.
+    - Zeek: Network security monitoring tool that analyzes network traffic in real-time
+      - Collects: Network session logs (HTTP, DNS, SSL, FTP, etc…)
+      - Network connection metadata
+      - Protocol-specific events and suspicious behaviors
+      - Detects anomalies, scans, and traffic patterns
+    - Suricata: Network intrusion detection and prevention system that inspects network packets for signatures and anomalies
+      - Collects: Alerts triggered by known signatures
+      - Network flow data/metadata
+      - Protocol anomalies, suspicious packet payloads
+    - Wazuh: Host based intrusion detection system that monitors endpoints for security events
+      - Collects: Host logs
+      - Security alerts
+      - Configuration changes
+      - OSSEC-based rules for threat detection 
+      - Rules maintained by OSSEC/Wazuh Devs and local administrators.
+  - Copy the .yml script into //etc/filebeat/filebeat.yml and //etc/logstash/conf.d/(filename) respectively 
+- Restart filebeat:
+  - Enter ‘sudo systemctl restart filebeat’ 
