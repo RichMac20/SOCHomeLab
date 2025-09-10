@@ -39,6 +39,6 @@
       - Configuration changes
       - OSSEC-based rules for threat detection 
       - Rules maintained by OSSEC/Wazuh Devs and local administrators.
-  - Copy the .yml script into //etc/filebeat/filebeat.yml and //etc/logstash/conf.d/(filename) respectively 
+  - Copy the [filebeat.yml](https://github.com/RichMac20/SOCHomeLab/blob/main/Steps/Configs/filebeat.yml) file into //etc/filebeat/filebeat.yml and //etc/logstash/conf.d/(filename)** respectively 
 - Restart filebeat:
   - Enter ‘sudo systemctl restart filebeat’ 
