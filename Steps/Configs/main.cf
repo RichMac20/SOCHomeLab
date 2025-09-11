@@ -1,0 +1,6 @@
+myhostname = postfix.lab.local
+mydomain = lab.local
+myorigin = $mydomain
+inet_interfaces = all
+inet_protocols = ipv4
+mydestination = $myhostname, localhost.$mydomain, localhost
