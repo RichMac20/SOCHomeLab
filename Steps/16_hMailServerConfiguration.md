@@ -1,0 +1,25 @@
+# Install and Configure hMailServer (DC1):  <img width="200" height="200" align="right" alt="download" src="https://github.com/user-attachments/assets/c703776a-75df-4726-861f-527e6d072dd4" />
+- Install [hMailServer](https://www.hmailserver.com/download) (Latest Version)
+  - Launch hMailServer Installer 
+  -  Next 
+  - Accept Terms  
+  - Next (4x) 
+  - Set admin password 
+  - Install 
+  - Prompts for Microsoft .NET Framework 2.0 
+  - Attempt to install .NET Framework 2.0 
+    - If it can’t install, manually install .NET Framework 2.0 via Server Manager
+      - Server Manager 
+      - Add Roles and Features  
+      - Features 
+      - .NET Framework 3.5 (Included .NET 2.0 and 3.0) 
+      - Finish adding the Framework
+      - Attempt hMailServer install again
+- Launch hMailServer Admin 
+  - Connect with hMailServer admin password 
+  - Add Domain 
+    - Enter mail.homelab.local  
+  - Right-Click Accounts 
+    - Add AD Account 
+      - Select Bill 
+        - Should autopopulate settings 
