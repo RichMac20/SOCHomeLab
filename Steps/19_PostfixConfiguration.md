@@ -1,0 +1,12 @@
+# Install Postfix (Kali):   <img width="200" height="200" align="right" alt="download" src="https://github.com/user-attachments/assets/d2532173-b232-4702-a4a3-3b994c760193" /> 
+- Launch terminal
+  - Enter ‘sudo apt install postfix mailutils -y’
+  - Select Internet Site
+  - Provide Host Name for the Mail Server: “postfix.lab.local”
+  - Add the this [Config](https://github.com/RichMac20/SOCHomeLab/blob/main/Steps/Configs/main.cf) /etc/postfix/main.cf file:
+  - Restart Postfix and Enable (To run on Boot):
+    - ‘sudo systemctl restart postfix’
+    - ‘sudo systemctl enable postfix’
+  - Send a Test Email:
+    - ‘mail -s "Lab Test" Bill@mail.homelab.local’
+    - Check ThunderBird on PC1 and confirm its received
