@@ -1,0 +1,14 @@
+# main.cf
+- Explanation
+  - myhostname = postfix.lab.local
+    - Defines FQDN
+  - mydomain = lab.local
+    - Defines domain
+  - myorigin = $mydomain
+    - Defines origin when only supplying a username 
+  - inet_interfaces = all
+    - Tells Postfix to listen on all available network interfaces for incoming mail.
+  - inet_protocols = ipv4
+    - Forces Postfix to use IPv4 only.
+  - mydestination = $myhostname, localhost.$mydomain, localhost
+    - Defines the list of domains that Postfix considers "local" (Mail delivered directly to mailbox)
