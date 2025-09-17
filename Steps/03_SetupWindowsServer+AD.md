@@ -1,6 +1,6 @@
 # Setup Windows Server 2022:<img width="600" height="66" alt="download" src="https://github.com/user-attachments/assets/fd3cce52-54fd-4a41-b0b6-c740da4614a8" />
 - In Virtualbox Manager
-  - Change Network Adapter 2 to Internal Network for LAN1
+  - Change Network Adapter 1 to Internal Network for LAN1
 - Boot/Setup Windows Server 2022
   - Select Standard Desktop Experience 
   - Allow Default Storage Allocation 
