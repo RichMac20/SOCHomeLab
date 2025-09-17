@@ -35,7 +35,11 @@
 - Add Static DHCP Mapping 
   - IP Address: 192.168.50.101
   - Hostname: DC1
-- Keep other configurations default 
+- Keep other configurations default
+ - Change LAN1 (Victim) DHCP Settings:
+ - The following will allow additional PCs to join the domain seamlessly
+  - Have DC1 (192.168.50.101) as Primary DNS Server 
+  - Change Domain Name to homelab.local
 # Set Static IP Mapping for Security Onion via Edge on DC1: 
 - Access pfSense Portal 
 - Status 
