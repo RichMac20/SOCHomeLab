@@ -36,25 +36,31 @@
     - 192.168.50.10 - 192.168.50.100
   - Allow HTTP as webConfigurator Protocol 
     - Allows for HTTP web Configuration of pfSense for various Services
+- Setup Other Interfaces:
+  - Assign Interfaces
+  - Decline VLANS
+  - Enter WAN: 'em0'
+  - Enter 'em1'
+  - Enter 'em2'
+  - Enter 'em3'
+  - Enter 'em4'
+  - 'Y'
 - Setup em2 IPV4 Gateway Address and DHCP Pool for Kali Linux/Attacker Network:
   - Set Interface(s) IP Address
   - Select LAN Interface
-    - Gateway Address/Netmask: 192.168.100.1/24
+    - Gateway Address/Netmask: 172.16.0.1/24
   - Decline WAN IPV4 upstream gateway address 
     - Already using Virtualbox’s NAT as WAN IPV4 upstream gateway address 
   - Decline IPV6 setup (Not needed, 4 hosts total)
   - Setup DHCP Server Pool Range
-    - 192.168.100.10 - 192.168.100.100
-- Change LAN1 (Victim) DHCP Settings:
-  - The following will allow additional PCs to join the domain seamlessly
-    - Have DC1 (192.168.50.101) as Primary DNS Server 
-    - Change Domain Name to homelab.local
+    - 172.16.0.10 - 172.16.0.100
 - Setup em3 IPV4 Gateway Address and DHCP Pool for Management Network: 
   - Set Interface(s) IP Address
   - Select LAN Interface
-    - Gateway Address/Netmask: 192.168.150.1/24
+    - Gateway Address/Netmask: 192.168.100.1/24
   - Decline DHCP Setup
     - Will utilize static mapping 
-- Setup em3 IPV4 Gateway Address and DHCP Pool for SpanPort (Mirror LAN1):
-  - Don’t enter an IP address
-  - Will bridge the network to LAN1 later during Web Configuration 
+- Setup em4 IPV4 Gateway Address and DHCP Pool for SpanPort (Mirror LAN1):
+  - Set Interface(s) IP Address
+  - Don’t enter an IP address (Just press 'Enter' for every prompt)
+    - Will bridge the network to LAN1 later during Web Configuration 
