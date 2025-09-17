@@ -13,7 +13,7 @@
         - Select name for pfSense, mine is “PfSense”
       - VBoxManage modifyvm "PfSense" --nic5 intnet
         - Adds internal network type for nic5
-      - VBoxManage modifyvm "PfSense" --intnet 5 “Span-Network”
+      - VBoxManage modifyvm "PfSense" --intnet5 “Span-Network”
         - Sets Internal Network name
       - VBoxManage modifyvm "PfSense" --nicpromisc5 allow-all
         - Allows for Promiscuous mode 
