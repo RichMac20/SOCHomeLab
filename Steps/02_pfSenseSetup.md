@@ -21,9 +21,10 @@
 - Boot pfSense
 - Following Install Procedure:
   - Install pfSense
-  - Keep Default Keymapping
-  - Partition Disk via ‘Auto UEFI’
-    - Faster boot than ‘Auto BIOS’ 
+  - Auto (UFS)
+  - Entire Disk
+  - MBR
+  - Reboot
 - Setup em1 IPV4 Gateway Address and DHCP Pool for Windows/Victim Network:
   - Set Interface(s) IP Address
   - Select LAN Interface
