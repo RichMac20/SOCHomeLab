@@ -21,7 +21,6 @@ VM Settings for Each:
     - Automatically set to ‘dynamically allocated’ to change based on needs
   - Allocate 50GB of Storage for Splunk
     - Automatically set to ‘dynamically allocated’ to change based on needs
-### Change Boot Order following Initial Boot: (Optional) 
-  - Do the following after intial setup of each VM
-    - Change boot order to Hard disk first then ISO
-      - Allows for faster boot times
+### Change Boot Order:
+  - Change boot order to Hard disk first then ISO
+    - Hardisk first, then ISO. Uncheck everything else
