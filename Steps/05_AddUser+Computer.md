@@ -9,7 +9,11 @@
 - In Virtualbox Manager
   - Change Network Adapter 1 to Internal Network for LAN1
 - Boot/Setup Windows 10
-  - Select Windows 10 Pro 
+  - Next
+  - Select "I don't have a product key"
+  - Select Windows 10 Pro
+  - Accept Terms
+  - Custom
   - Allow Default Storage Allocation 
   - Setup Offline Admin Account 
 - Rename PC via About Your PC to PC1 
