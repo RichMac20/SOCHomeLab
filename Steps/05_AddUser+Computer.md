@@ -7,7 +7,7 @@
     - Used ‘Bill’ and ‘Fred’ as Logon to keep it simple 
 # Setup Windows 10 Pro (PC1): 
 - In Virtualbox Manager
-  - Change Network Adapter 2 to Internal Network for LAN1
+  - Change Network Adapter 1 to Internal Network for LAN1
 - Boot/Setup Windows 10
   - Select Windows 10 Pro 
   - Allow Default Storage Allocation 
