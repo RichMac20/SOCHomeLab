@@ -26,7 +26,7 @@
   - Skip/Accept following prompts
 - Upon booting, Rename PC via About Your PC to PC1 
 - Reboot
-- Install Virtualbox Guest Additions 
+- Install Virtualbox Guest Additions (Optional)
   - Enhances performance/usability 
 - Change IPV4 Ethernet Adapter to use DC1s IP (192.168.50.101) as primary DNS server
   - Will still use pfSense as a backup if it can’t resolve locally
