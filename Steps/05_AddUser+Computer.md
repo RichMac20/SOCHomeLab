@@ -15,7 +15,8 @@
   - Accept Terms
   - Custom
   - Allow Default Storage Allocation 
-  - Setup Offline Admin Account 
+  - Setup Offline Admin Account
+- Following intial reboot, continue with setup steps
 - Rename PC via About Your PC to PC1 
 - Reboot
 - Install Virtualbox Guest Additions 
