@@ -4,6 +4,8 @@
 - Launch Edge
 - Access Gateways (192.168.50.1) pfSense Configuration Portal
 - Login via default pfSense credentials
+  - User: admin
+  - Password: pfsense
 - Complete pfSense Setup
   - Keep default hostname: pfSense
   - Domain: lab.local
