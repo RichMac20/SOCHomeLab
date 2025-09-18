@@ -17,7 +17,14 @@
   - Allow Default Storage Allocation 
   - Setup Offline Admin Account
 - Following intial reboot, continue with setup steps
-- Rename PC via About Your PC to PC1 
+  - Be sure to select Organizational Setup
+  - Join via Domain
+  - Use Account:
+    - Admin
+    - Password
+  - Provide Security Answers
+  - Skip/Accept following prompts
+- Upon booting, Rename PC via About Your PC to PC1 
 - Reboot
 - Install Virtualbox Guest Additions 
   - Enhances performance/usability 
