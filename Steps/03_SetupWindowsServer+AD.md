@@ -2,8 +2,10 @@
 - In Virtualbox Manager
   - Change Network Adapter 1 to Internal Network for LAN1
 - Boot/Setup Windows Server 2022
+  - Next
+  - Install
   - Select Standard Desktop Experience
-  - Custom Install
+  - Custom 
   - Allow Default Storage Allocation 
   - Setup Administrator Account
 - Rename PC via About Your PC to DC1 
