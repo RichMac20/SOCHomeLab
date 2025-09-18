@@ -10,7 +10,7 @@
   - Setup Administrator Account
 - Rename PC via About Your PC to DC1 
 - Reboot
-- Install Virtualbox Guest Additions 
+- Install Virtualbox Guest Additions (Optional)
   - Enhances performance/usability 
 - Change IPV4 Ethernet Adapter to use loopback (127.0.0.1) as primary DNS server
   - Will still use pfSense as a backup if it can’t resolve locally
