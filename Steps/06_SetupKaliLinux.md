@@ -13,5 +13,5 @@
   - Select Virtual Disk and default Partition Options
   - Keep default Desktop Environment Install and Tools
   - Install GRUB boot loader
-- Update/Upgrade Packages 
+- Update Packages 
 - Reboot
