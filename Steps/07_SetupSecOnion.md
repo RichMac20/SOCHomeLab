@@ -17,9 +17,9 @@
   - Set Hostname (seconion)
   - Select emp0s8 as the Management Interface
   - Select Static IP 
-    - IP Address: 192.168.150.10/24
+    - IP Address: 192.168.100.10/24
   - Enter Gateway
-    - Gateway: 192.168.150.1
+    - Gateway: 192.168.100.1
   - DNS Server Config:
     - Add DC1 (192.168.50.101) as Primary (Internal Inquires)
     - pfSense Management Interface (192.168.150.1) as Secondary DNS Server for non-domain inquires 
