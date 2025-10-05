@@ -15,7 +15,7 @@
   - Standard Installation
   - Evaluation Installation Mode (Quick, all-in-one testing) 
   - Set Hostname (seconion)
-  - Select emp0s8 as the Management Interface
+  - Select emp0s3 as the Management Interface
   - Select Static IP 
     - IP Address: 192.168.100.10/24
   - Enter Gateway
@@ -31,7 +31,7 @@
     - Allows for internet access
   - Direct Internet Access
   - Pre-Install Checkups for Packages 
-  - Select emp0s9 as the Monitor Interface 
+  - Select emp0s8 as the Monitor Interface 
     - Will utilize the Span-Network NIC setup earlier
   - Automatic Patch Schedule
   - Change Home Network to 192.168.50.0/24 
