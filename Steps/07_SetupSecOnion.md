@@ -22,7 +22,7 @@
     - Gateway: 192.168.100.1
   - DNS Server Config:
     - Add DC1 (192.168.50.101) as Primary (Internal Inquires)
-    - pfSense Management Interface (192.168.150.1) as Secondary DNS Server for non-domain inquires 
+    - pfSense Management Interface (192.168.100.1) as Secondary DNS Server for non-domain inquires 
   - DNS Search Domain
     - Same as AD Domain: homelab.local 
       - Allows seconion to resolve hosts with typing full FQDN
