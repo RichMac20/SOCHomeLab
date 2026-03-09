@@ -29,7 +29,7 @@
     - Skip Featured Server Snaps
       - None are needed for this lab
 - Reboot
-- Install GUI (If using Ubuntu Server ISO)
+# Install GUI (If using Ubuntu Server ISO) *
   - First install tasksel (Task Selector)
     - Allows simple installs of predefined packages (i.e., Ubuntu Desktop)
       - ‘Sudo apt install tasksel’ 
