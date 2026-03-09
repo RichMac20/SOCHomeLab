@@ -3,7 +3,7 @@
 - In Virtualbox Manager
   - Change Network Adapter 2 to Internal Network for LAN3
     -Management Interface for Web Interface 
-  - Change Network Adapter 3 to Internal Network for SPAN-Network (Promiscuous Mode)
+  - Change Network Adapter 3 to Internal Network for Span-Network (Promiscuous Mode)
     - This NIC is going to be the Monitor Interface for all of LAN1
 - Boot/Setup Security Onion
   - Setup Administrative Account
