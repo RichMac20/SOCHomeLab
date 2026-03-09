@@ -5,7 +5,7 @@
   - Select Language (English)
   - Accept default layout/variant options for Keyboard (English US)
   - Select default Ubuntu Server 
-  - Select enpos3 (NIC for LAN3)
+  - Select enpos3 (NIC for Management Interface)
     - Select IPV4 Manual
       - Subnet: 192.168.100.0/24
       - Address: 192.168.100.20
