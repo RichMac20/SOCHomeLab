@@ -1,6 +1,6 @@
 # Setting up Ubuntu Server (for Splunk)  <img width="100" height="100" alt="download" src="https://github.com/user-attachments/assets/138e98bb-a7e2-4dcc-a011-2198513a725f" />
 - In Virtualbox Manager
-  - Change Network Adapter 1 to Internal Network for LAN3
+  - Change Network Adapter 1 to Internal Network for Management Gateway
 - Boot/Setup Ubuntu Server (Recommended by Splunk):
   - Select Language (English)
   - Accept default layout/variant options for Keyboard (English US)
