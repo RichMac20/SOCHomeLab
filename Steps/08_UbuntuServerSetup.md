@@ -7,11 +7,11 @@
   - Select default Ubuntu Server 
   - Select enpos3 (NIC for LAN3)
     - Select IPV4 Manual
-      - Subnet: 192.168.150.0/24
-      - Address: 192.168.150.20
-      - Gateway: 192.168.150.1
-      - Name Servers: 192.168.50.101, 192.168.150.1
-        - DC1 as primary, pfSense LAN3 interface as secondary
+      - Subnet: 192.168.100.0/24
+      - Address: 192.168.100.20
+      - Gateway: 192.168.100.1
+      - Name Servers: 192.168.50.101, 192.168.100.1
+        - DC1 as primary, pfSense Management interface as secondary
       - Search Domains: homelab.local (AD Domain) 
   - Skip Proxy Address configuration
     - Using pfSense to access the internet
