@@ -21,10 +21,10 @@ Universal Forwarders are lightweight Splunk agents that collect/forward logs to 
   - Setup Admin account
   - Enter Deployment Server info:
     - Used to config Universal Forwarder 
-      - Host/IP: 192.168.150.20
+      - Host/IP: 192.168.100.20
       - Port: 8089 (Default Port)
   - Enter Receiving Port info:
-    - Host/IP: 192.168.150.20
+    - Host/IP: 192.168.100.20
     - Port: 9997(Default Port, same port previously configured in Splunk Enterprise) 
 - On PC1:
   - Access Splunk.com > Navigate to Splunk Universal Forwarder download:
@@ -33,10 +33,10 @@ Universal Forwarders are lightweight Splunk agents that collect/forward logs to 
   - Setup Admin account
   - Enter Deployment Server info:
     - Used to config Universal Forwarder 
-      - Host/IP: 192.168.150.20
+      - Host/IP: 192.168.100.20
       - Port: 8089 (Default Port)
   - Enter Receiving Port info:
-    - Host/IP: 192.168.150.20
+    - Host/IP: 192.168.100.20
     - Port: 9997(Default Port, same port previously configured in Splunk Enterprise)
 # Creating Forwarder Server and adding Endpoint Agents (Universal Forwarders)
 - Add Splunk Forwarder Server (In Splunk Enterprise): 
