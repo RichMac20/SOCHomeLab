@@ -21,6 +21,6 @@
 # Add Splunk to so-allow list on SecOnion 
 - Enter:
   - 'Sudo so-allow' 
-  - Select ‘A’
+  - Select ‘a’
   - Enter 192.168.100.20
 - NOTE: Allows Ubuntu (Splunk Server) to access SecOnion to collect logs
