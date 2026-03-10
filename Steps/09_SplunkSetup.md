@@ -22,5 +22,5 @@
 - Enter:
   - 'Sudo so-allow' 
   - Select ‘A’
-  - Enter 192.168.150.20
+  - Enter 192.168.100.20
 - NOTE: Allows Ubuntu (Splunk Server) to access SecOnion to collect logs
