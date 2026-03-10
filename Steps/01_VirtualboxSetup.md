@@ -6,7 +6,7 @@
   - [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines) Select download for Virtualbox
   - [pfSense](https://www.pfsense.org/download/) Forces download now through Netgate Installer, follow steps to get ISO file
   - [Security Onion](https://github.com/Security-Onion-Solutions/securityonion/blob/master/VERIFY_ISO.md) Install the ISO Image
-  - [Ubuntu (Splunk)](https://ubuntu.com/download/desktop) Download latest Ubuntu Desktop OR Server version
+  - [Ubuntu (Splunk)](https://ubuntu.com/download/desktop) Download latest Ubuntu Desktop version
 ### Create 6 VMs, one for each of the above ISO files 
 VM Settings for Each:
   - Allocate 3GB of RAM per VM 
