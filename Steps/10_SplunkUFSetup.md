@@ -15,7 +15,7 @@ Universal Forwarders are lightweight Splunk agents that collect/forward logs to 
       - 2 Day
         - Prevents large storage usage 
 - On DC1
-  - Access Splunk.com > Navigate to Splunk Universal Forwarder download:
+  - Access Splunk.com > Navigate to [Splunk Universal Forwarder download](https://www.splunk.com/en_us/download/universal-forwarder.html):
     - Install for Windows Server 2022
   - Run the .msi
   - Setup Admin account
@@ -27,7 +27,7 @@ Universal Forwarders are lightweight Splunk agents that collect/forward logs to 
     - Host/IP: 192.168.100.20
     - Port: 9997(Default Port, same port previously configured in Splunk Enterprise) 
 - On PC1:
-  - Access Splunk.com > Navigate to Splunk Universal Forwarder download:
+  - Access Splunk.com > Navigate to [Splunk Universal Forwarder download](https://www.splunk.com/en_us/download/universal-forwarder.html):
     - Install for Windows Server 2022
   - Run the .msi
   - Setup Admin account
