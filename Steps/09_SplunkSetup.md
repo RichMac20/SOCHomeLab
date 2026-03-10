@@ -14,7 +14,7 @@
 - Use a spacebar to move through the General Terms. 
 - Accept terms
 - Create Admin account
-- Access Splunk Console via http://splunk:8000
+- Access Splunk Console (Should show following Admin account creation) Ex. http://[hostname]:8000
 - While in the /Downloads/splunk/bin directory, perform the following command:
   - ‘Sudo ./splunk enable boot-start’
     - Allows splunk to run on boot to prevent having to manually start splunk
