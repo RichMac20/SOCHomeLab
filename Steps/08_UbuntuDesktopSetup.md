@@ -1,41 +1,31 @@
 # Setting up Ubuntu Desktop (for Splunk)  <img width="100" height="100" alt="download" src="https://github.com/user-attachments/assets/138e98bb-a7e2-4dcc-a011-2198513a725f" />
 - In Virtualbox Manager
   - Change Network Adapter 1 to Internal Network for Management Gateway
-- Boot/Setup Ubuntu Server (Recommended by Splunk):
-  - Select Language (English)
-  - Accept default layout/variant options for Keyboard (English US)
-  - Select default Ubuntu Server 
-  - Select enpos3 (NIC for Management Interface)
-    - Select IPV4 Manual
-      - Subnet: 192.168.100.0/24
-      - Address: 192.168.100.20
-      - Gateway: 192.168.100.1
-      - Name Servers: 192.168.50.101, 192.168.100.1
-        - DC1 as primary, pfSense Management interface as secondary
-      - Search Domains: homelab.local (AD Domain) 
-  - Skip Proxy Address configuration
-    - Using pfSense to access the internet
-  - Keep default archive mirror configuration address 
-    - Address used for packages/updates. 
-  - Keep default storage configuration (Setup earlier: 50GB)
-  - Profile Configuration:
-    - Select Name
-    - Server Name: ‘splunk’
-    - Username
-    - Password
-    - Skip Ubuntu Pro
-      - Can be enabled later
-    - Install OpenSSH Server
-    - Skip Featured Server Snaps
-      - None are needed for this lab
-- Reboot
-# Install GUI (If using Ubuntu Server ISO) *
-  - First install tasksel (Task Selector)
-    - Allows simple installs of predefined packages (i.e., Ubuntu Desktop)
-      - ‘Sudo apt install tasksel’ 
-  - Install Ubuntu Desktop
-    - Sudo apt install ubuntu-desktop 
-- Reboot server
-  - Sudo reboot
-- Login 
-  - Should now see GUI Desktop 
+- Boot/Setup Ubuntu Desktop
+  - Click the Connections Icon
+    - Select the arrow for Wired
+    - Select Wired Settings
+    - Select the Gear Icon
+    - Remove Default Connection Profile
+    - Add new Wired Connection Profile
+      - Select IPv4
+      - Disable Automatic DNS
+      - Select Manual
+      - Add Static IP: 192.168.100.20
+      - Add Netmask: 255.255.255.0
+      - Add Gateway IP: 192.168.100.1
+      - Add DNS IPs
+        - Primary: 192.168.50.101
+        - Secondary: 192.168.100.1
+      - Select Apply
+  - In the Install Release Window follow the setup: 
+    - Select Language (English)
+    - Skip Accessibility
+    - Select Keyboard (English)
+    - Connect to Internet (Use Wired Connection)
+    - Install Ubuntu
+    - Select default options until the 'Create your account' prompt appears
+    - Create account
+    - Select Timezone
+    - Select Install
+    - Reboot
