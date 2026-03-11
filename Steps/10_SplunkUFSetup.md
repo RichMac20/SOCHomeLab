@@ -38,6 +38,11 @@ Universal Forwarders are lightweight Splunk agents that collect/forward logs to 
   - Enter Receiving Port info:
     - Host/IP: 192.168.100.20
     - Port: 9997(Default Port, same port previously configured in Splunk Enterprise)
+# Creating a Deployment Server via CLI
+- In the CLI (On the Ubuntu Desktop
+  - Navigate to /home/[user]/Downloads/splunk/bin
+  - Enter './splunk enable deploy-server'
+  - Then restart the server with './splunk restart'
 # Creating Forwarder Server and adding Endpoint Agents (Universal Forwarders)
 - Add Splunk Forwarder Server (In Splunk Enterprise): 
   - Settings > Add Data 
