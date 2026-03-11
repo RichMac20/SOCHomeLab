@@ -28,7 +28,7 @@
   - Install for Windows 
     - Follow the prompts, before finishing check the box for running the configuration
 - Register/Authenticate DC1:
-  - Enter the IP Address of the Manager (Security Onion’s IP): 192.168.150.10
+  - Enter the IP Address of the Manager (Security Onion’s IP): 192.168.100.10
   - Enter Authentication key for the endpoint 
 - Repeat the above for PC1
 - Note: If the status shows stopped perform the following:
