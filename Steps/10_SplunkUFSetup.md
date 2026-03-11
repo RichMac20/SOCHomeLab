@@ -41,8 +41,9 @@ Universal Forwarders are lightweight Splunk agents that collect/forward logs to 
 # Creating a Deployment Server via CLI
 - In the CLI (On the Ubuntu Desktop
   - Navigate to /home/[user]/Downloads/splunk/bin
-  - Enter './splunk enable deploy-server'
-  - Then restart the server with './splunk restart'
+    - Enter './splunk enable deploy-server'
+  - Restart the Splunk server
+    - Enter './splunk restart'
 # Creating Forwarder Server and adding Endpoint Agents (Universal Forwarders)
 - Add Splunk Forwarder Server (In Splunk Enterprise): 
   - Settings > Add Data 
