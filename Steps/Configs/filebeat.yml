@@ -28,4 +28,4 @@ filebeat.inputs:
           fields_under_root: true
 
 output.logstash:
-        hosts: ["192.168.150.10:5044]
+        hosts: ["192.168.100.10:5044]
