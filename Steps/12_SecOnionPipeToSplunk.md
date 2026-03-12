@@ -1,4 +1,5 @@
 # Setup Splunk HEC (Splunk): 
+- Creat a new Index titled seconion_hec (See previous steps)
 - Create new Ingestion:
   - In Splunk Enterprise:
     - Settings > New Data > Monitor > HTTP Event Collector:
