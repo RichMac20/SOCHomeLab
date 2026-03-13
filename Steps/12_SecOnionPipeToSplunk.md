@@ -16,7 +16,7 @@
   - Filebeat: Tool used to forward specific logs to a destination, like splunk. (Not typically installed)
 - In Security Onion:
   - Install Filebeat:
-    - Enter ‘curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-9.0.0-x86_64.rpm’
+    - Enter ‘curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.18.2-x86_64.rpm’
       - Downloads official filebeat package
   - Enter ‘sudo rpm -i filebeat-9.0.0-x86_64.rpm’
     - Installs Filebeat via rpm package
