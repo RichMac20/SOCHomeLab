@@ -18,7 +18,7 @@
   - Install Filebeat:
     - Enter ‘curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.18.2-x86_64.rpm’
       - Downloads official filebeat package
-  - Enter ‘sudo rpm -i filebeat-9.0.0-x86_64.rpm’
+  - Enter ‘sudo rpm -i filebeat-8.18.2-x86_64.rpm’
     - Installs Filebeat via rpm package
   - Enter ‘sudo systemctl start filebeat’
     - Starts filebeat
