@@ -2,6 +2,7 @@
 - Add DNS A/MX Records in DNS Manager
   - On DC1
     - DNS Manager
+    - Expand Forward Lookup Zones
     - Right Click homelab.local 
     - Add A record, Name=mail, IP address=DC1 (192.168.50.101) 
     - Check ‘Create associated PTR record’ 
