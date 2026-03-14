@@ -14,9 +14,9 @@ Note: Outlook is very finicky to setup because it forces Autodiscovery via cloud
   - Select Account Settings
   - New Account
   - Mail Account
-  - Enter: Name: Bill, Email:Bill@mail.homelab.local
-  - Continue
-  - Enter Bill's domain password
-  - Continue
-  - Finish
+    - Enter: Name: Bill, Email:Bill@mail.homelab.local
+    - Continue
+    - Enter Bill's domain password
+    - Continue
+    - Finish
   - Successful if it shows a mailbox associated with Bill@mail.homelab.local
