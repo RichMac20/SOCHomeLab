@@ -16,5 +16,5 @@
     - Leave Profile default
     - Name Rule 'IMAP Allow'
 - Test new firewall rules using the Powershell command 
-  - ‘Test-NetConnection -ComputerName 192.168.50.101 [25/143]’ 
+  - ‘Test-NetConnection -ComputerName 192.168.50.101 -Port [25/143]’ 
     - If Status comes back as “True” then it works. 
