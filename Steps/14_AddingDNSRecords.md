@@ -10,7 +10,7 @@
     - Add MX Record 
     - Right click homelab.local 
     - Select MX Record 
-    - Leave “Host or child domain blank” 
+    - Leave “Host or child domain" field blank
     - Set FQDN to mail.homelab.local or use browse to select A record for mail, leave priority default (10). 
 # Verify MX Record via NSLookup: 
 - Nslookup via CMD 
