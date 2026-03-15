@@ -8,8 +8,9 @@
 - Select “Sending Profiles” 
 - Select New Profile 
   - Enter Postfix Test
-  - SMTP From (What recipient sees): john@mc.com
-  - Host: 127.0.0.1 
+  - SMTP From (What recipient sees): john@mail.mc.com
+  - Host: 172.16.0.10:25 
   - Click Send Test Email 
   - Provide Bill@mail.homelab.local 
     - Confirm Bill’s mailbox received the email
+  - Note: If there are issues with sending a test email, check the [Config](https://github.com/RichMac20/SOCHomeLab/blob/main/Steps/Configs/main.cf) file for Postfix in /etc/postfix/main.cf
