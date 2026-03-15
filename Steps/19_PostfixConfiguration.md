@@ -9,4 +9,6 @@
     - ‘sudo systemctl enable postfix’
   - Send a Test Email:
     - ‘mail -s "Lab Test" Bill@mail.homelab.local’
+    - Press the Enter button twice
+    - Then do Ctl+D to finish the email and send it
     - Check ThunderBird on PC1 and confirm its received
