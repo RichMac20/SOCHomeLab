@@ -1,6 +1,8 @@
 myhostname = postfix.lab.local
+mynetworks = 127.0.0.0/8, 172.0.0.0/12
 mydomain = lab.local
 myorigin = $mydomain
 inet_interfaces = all
 inet_protocols = ipv4
 mydestination = $myhostname, localhost.$mydomain, localhost
+smtpd_relay_restrictions = permit_mynetworks, permit_sasl_authenticated, defer_unauth_destination
