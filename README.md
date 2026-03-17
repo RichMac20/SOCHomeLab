@@ -3,9 +3,9 @@
 Creating a SOC Analyst Homelab via Virtualbox 
 
 ---
-## Download the [SOC Analyst Homelab.docx](https://github.com/user-attachments/files/22062120/SOC.Analyst.Homelab.docx)
+## Follow the Steps Detailed in This Repo 
 
-- File Contains the following:
+- Repo Contains the following:
   - Virtualbox Setup for 6 VMs 
   - Networking/PfSense Configuration 
   - Windows Server & Active Directory Configuration
@@ -17,13 +17,10 @@ Creating a SOC Analyst Homelab via Virtualbox
 ## Note
 🚧 Work in Progress 🚧
 
-Documentation will be significantly reworked
-
 ---
 
-### Things to be added in the future:
+### Possible Future Additions:
 - Splunk Alerts/Automation
 - Log Optimization when pulled from SecOnion
-- Video Tutorial/Walkthrough of Setup, Siumulated Attack, SOC Analyst POV of Simulated Attack
-- Addition of Resources
+- Video Tutorial/Walkthrough of  Siumulated Attack/SOC Analyst POV of Simulated Attack
 - Overall Optimization
