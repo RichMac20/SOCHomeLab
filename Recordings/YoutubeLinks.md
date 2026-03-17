@@ -1,4 +1,4 @@
-# Youtube Links <img width="100" height="100" alt="download" src=">https://github.com/user-attachments/assets/2122c1d0-1a78-4e96-a48c-1dce04b61208">
+# Youtube Links <img src="https://github.com/user-attachments/assets/2122c1d0-1a78-4e96-a48c-1dce04b61208" width="75" height="100" alt="Sample Image" >
 
 ## Parts 1 -5
 https://www.youtube.com/watch?v=ojoJDgTsZ9o
