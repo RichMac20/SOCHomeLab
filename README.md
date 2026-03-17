@@ -2,10 +2,8 @@
 
 Creating a SOC Analyst Homelab via Virtualbox 
 
----
-## Follow the Steps Detailed in This Repo 
+## Written/Video Steps Detail
 
-- Repo Contains the following:
   - Virtualbox Setup for 6 VMs 
   - Networking/PfSense Configuration 
   - Windows Server & Active Directory Configuration
