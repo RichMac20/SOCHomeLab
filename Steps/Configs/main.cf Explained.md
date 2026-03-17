@@ -2,6 +2,8 @@
 - Explanation
   - myhostname = postfix.lab.local
     - Defines FQDN
+  - mynetworks = 127.0.0.0/8, 172.0.0.0/12
+    - Defined trusted networks allowed to relay mail through server without authentication
   - mydomain = lab.local
     - Defines domain
   - myorigin = $mydomain
@@ -12,3 +14,5 @@
     - Forces Postfix to use IPv4 only.
   - mydestination = $myhostname, localhost.$mydomain, localhost
     - Defines the list of domains that Postfix considers "local" (Mail delivered directly to mailbox)
+  - smtpd_relay_restrictions = permit_mynetworks, permit_sasl_authenticated, defer_unauth_destination
+    - Permits 'mynetworks' to relay mail through server, allows relaying for users authenticating with SMTP AUTH, prevents unauthorized mail relaying
