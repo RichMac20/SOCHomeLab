@@ -14,10 +14,7 @@ Creating a SOC Analyst Homelab via Virtualbox
   - Wazuh Setup
   - Email Servers Setup + GoPhish Setup
 
-## Note
-🚧 Work in Progress 🚧
-
----
+## NOTE 🚧 Work in Progress 🚧
 
 ### Possible Future Additions:
 - Splunk Alerts/Automation
